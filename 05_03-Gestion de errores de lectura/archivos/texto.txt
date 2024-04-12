@@ -1,0 +1,1 @@
+Esta es una cadena de texto guardada en un archivo externo

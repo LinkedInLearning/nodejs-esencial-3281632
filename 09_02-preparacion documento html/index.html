@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conexión en tiempo real</title>
+</head>
+
+<body>
+    <h1>Conexión en tiempo real</h1>
+    <ul id="mensajes"></ul>
+    <input type="text" id="mensajeInput" placeholder="Escribe un mensaje...">
+    <button id="enviarBtn">Enviar</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.2/socket.io.js"></script>
+ 
+    <script>
+
+        const socket = io();
+        const mensajesDoc = document.getElementById('mensajes');
+        const mensajeInput = document.getElementById('mensajeInput');
+        const enviarBtn = document.getElementById('enviarBtn');
+
+        socket.on('mensaje', mensaje => {
+            const nuevoMensaje = document.createElement('li');
+            nuevoMensaje.textContent = mensaje;
+            mensajesDoc.appendChild(nuevoMensaje);
+        });
+
+        enviarBtn.addEventListener('click', () => {
+            const mensaje = mensajeInput.value;
+            if (mensaje.trim() !== '') {
+                socket.emit('mensaje', mensaje);
+                mensajeInput.value = '';
+            }
+        });
+    </script>
+</body>
+
+</html>

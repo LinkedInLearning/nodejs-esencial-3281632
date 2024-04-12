@@ -1,0 +1,16 @@
+{
+  "name": "08_01-instalacion_socket.io",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "dependencies": {
+    "socket.io": "^4.7.5"
+  }
+}

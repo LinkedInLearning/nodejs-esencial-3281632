@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1 Listado de Libros
+  
+  if datosLibros
+    each libro in datosLibros
+      ul
+          li 
+            h3= libro.titulo
+            p Autor: #{libro.autor}

@@ -1,0 +1,22 @@
+{
+  "name": "mi-proyecto",
+  "version": "1.0.0",
+  "description": "un proyecto node de ejemplo",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "start": "node index.js",
+    "watch": "node --watch index.js"
+  
+  },
+  "author": "carlos solis",
+  "license": "ISC",
+  "type": "module",
+  "jest": {
+    "transform": {}
+  },
+
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
